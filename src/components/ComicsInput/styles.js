@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled, { css } from 'styled-components';
 
 export const ContainerSearchInput = styled.div`
   ${({ theme }) => css`
@@ -63,7 +63,7 @@ export const SearchButton = styled.button`
 `;
 
 export const TitleInput = styled.span`
-  ${({ theme }) => css`
+  ${({ theme, color = '' }) => css`
     position: absolute;
     display: block;
     width: 100%;
@@ -76,7 +76,7 @@ export const TitleInput = styled.span`
     color: #adadad;
 
     &::before {
-      content: "";
+      content: '';
       display: block;
       position: absolute;
       bottom: -2px;
@@ -98,7 +98,7 @@ export const TitleInput = styled.span`
 
       font-family: ${theme.font.family.secondFont};
       font-size: 20px;
-      color: white;
+      color: #adadad;
       line-height: 1.2;
       text-transform: uppercase;
       font-style: italic;

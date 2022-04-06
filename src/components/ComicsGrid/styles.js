@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled, { css } from 'styled-components';
 
 export const Container = styled.div`
   ${({ theme }) => css`
@@ -54,7 +54,7 @@ export const GridCell = styled.div`
 `;
 
 export const GridCellImg = styled.img`
-  ${({ theme }) => css`
+  ${({ theme, selected = false }) => css`
     border: 1px solid black;
     max-width: 100%;
     width: 80%;
@@ -65,6 +65,8 @@ export const GridCellImg = styled.img`
     cursor: pointer;
     margin-top: 5px;
     transition: all 0.2s ease-in-out;
+
+    transform: ${selected ? 'scale(0.5)' : ''};
 
     border-radius: 10px;
   `}
@@ -121,7 +123,7 @@ export const GridCellHover = styled.div`
 `;
 
 export const GridCellButtons = styled.button`
-  ${({ theme, color = "white", BGcolor = "white", BoxShadow = "white" }) => css`
+  ${({ theme, color = 'white', BGcolor = 'white', BoxShadow = 'white' }) => css`
     border: none;
     padding: 2rem;
     border-radius: 10px;

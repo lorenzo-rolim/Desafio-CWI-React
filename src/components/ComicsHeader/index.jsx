@@ -1,13 +1,13 @@
-import React from "react";
-import P from "prop-types";
-import * as Styled from "./styles";
+import React from 'react';
+import P from 'prop-types';
+import * as Styled from './styles';
 
-const ComicsHeader = ({ children }) => {
+const ComicsHeader = ({ children, title }) => {
   return (
     //
     <Styled.Container>
       <Styled.TitleContainer>
-        <Styled.Title>Encontre aqui os seus preferidos!</Styled.Title>
+        <Styled.Title>{title}</Styled.Title>
       </Styled.TitleContainer>
     </Styled.Container>
   );

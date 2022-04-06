@@ -1,8 +1,13 @@
 export const mapComicAttributes = (comicsData = [{}], loading) => {
   return comicsData.map((comic) => {
-    const { title = "", thumbnail: { path: image, extension } = {} } = comic;
+    const {
+      id = null,
+      title = "",
+      thumbnail: { path: image, extension } = {},
+    } = comic;
 
     return {
+      id,
       title,
       image,
       extension,
