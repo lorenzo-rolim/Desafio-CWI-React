@@ -6,6 +6,7 @@ export const theme = {
   font: {
     family: {
       default: "'Six Caps', sans-serif;",
+      secondFont: "'Poppins', sans-serif;",
     },
     sizes: {
       xsmall: "8rem",
