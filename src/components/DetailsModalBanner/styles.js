@@ -2,11 +2,19 @@ import styled, { css } from 'styled-components';
 
 export const Container = styled.div`
   ${({ theme }) => css`
+    height: 75vh;
+    width: 100%;
+
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+  `}
+`;
 
-    background-color: #333;
+export const ModalBanner = styled.img`
+  ${({ theme }) => css`
+    border-radius: 20px;
+    object-fit: cover;
+    height: 100%;
   `}
 `;

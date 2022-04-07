@@ -7,11 +7,17 @@ import useFetch from '../../hooks/useFetch';
 import { mapComicAttributes } from '../../api/map-comic-attributes';
 import { useNavigate } from 'react-router-dom';
 
-const ComicsGrid = ({ children, inputValue = '' }) => {
+const ComicsGrid = ({ children, inputValue = '', setModalComic }) => {
   const { data, loading } = useFetch();
-  const navigate = useNavigate();
   const [selected, setSelected] = useState(false);
   const newData = mapComicAttributes(data, loading);
+  const navigate = useNavigate();
+
+  const HandlerModal = (comic) => {
+    setModalComic(comic);
+  };
+
+  //   console.log(newData);
 
   return (
     //
@@ -40,7 +46,7 @@ const ComicsGrid = ({ children, inputValue = '' }) => {
                   <Styled.GridCellButtons
                     BGcolor="#40B5AD"
                     BoxShadow="rgba(64, 181, 173, 0.8)"
-                    onClick={() => navigate(`/details/${comic.id}`)}
+                    onClick={() => HandlerModal(comic)}
                   >
                     Detalhes
                   </Styled.GridCellButtons>
@@ -63,6 +69,7 @@ const ComicsGrid = ({ children, inputValue = '' }) => {
 ComicsGrid.propTypes = {
   children: P.node,
   inputValues: P.string,
+  setModalComic: P.func,
 };
 
 export default ComicsGrid;

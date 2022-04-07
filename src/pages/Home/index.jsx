@@ -10,13 +10,29 @@ import ComicsGrid from '../../components/ComicsGrid';
 import { useState } from 'react';
 import ComicsEmail from '../../components/ComicsEmail';
 
+import DatailsModal from '../../components/DetailsModal/index';
+
+export const initialState = () => {
+  return {
+    title: '',
+    date: '',
+    description: '',
+    extension: '',
+    id: null,
+    image: '',
+    creators: [],
+  };
+};
+
 const Home = ({ children }) => {
   const [inputValue, setInputValue] = useState('');
   const [emailValue, setEmailValue] = useState('');
+  const [modalComic, setModalComic] = useState(initialState);
 
   return (
     //
     <Styled.Container>
+      <DatailsModal data={modalComic} setData={setModalComic} />
       <Header title="Marvel Comics" />
       <FullBanner />
       <ComicsHeader title="Encontre aqui os seus preferidos!" />
@@ -26,7 +42,7 @@ const Home = ({ children }) => {
           inputValue={inputValue}
           placeholder="Pesquise seus Quadrinhos aqui."
         />
-        <ComicsGrid inputValue={inputValue} />
+        <ComicsGrid inputValue={inputValue} setModalComic={setModalComic} />
         <ComicsHeader title="Receba no seu E-Mail!" />
         <ComicsEmail inputValue={emailValue}>
           <ComicsInput
