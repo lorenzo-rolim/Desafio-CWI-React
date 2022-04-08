@@ -4,7 +4,7 @@ import Home from './pages/Home/index';
 
 export default function MainRoutes() {
   return (
-    <Router>
+    <Router basename={public.env.PUBLIC_URL}>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="*" element={<NotFoundRoute />} />

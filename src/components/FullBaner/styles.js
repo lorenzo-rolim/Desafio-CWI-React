@@ -1,5 +1,4 @@
 import styled, { css } from 'styled-components';
-import bannerBang from '../../assets/banners/fundo-full-banner.jpg';
 import { device } from '../../constants/breakpoints';
 
 export const Container = styled.div`
@@ -58,7 +57,6 @@ export const BangBackground = styled.img`
     top: 0;
     left: ${left};
     background-repeat: repeat-x;
-    background-image: ${bannerBang};
 
     height: 100%;
   `}

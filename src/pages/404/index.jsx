@@ -14,7 +14,7 @@ const NotFoundRoute = ({ children }) => {
           Ocorreu um erro e não foi possível localizar o caminho
         </Styled.Menssage>
         <Styled.SpanLink>
-          <Styled.Link href="/">Voltar a página Inicial</Styled.Link>
+          <Styled.Link href="/home">Voltar a página Inicial</Styled.Link>
         </Styled.SpanLink>
       </Styled.Container404>
     </Styled.Container>

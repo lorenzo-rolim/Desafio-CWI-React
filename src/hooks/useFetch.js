@@ -15,7 +15,7 @@ const useFetch = () => {
   useEffect(() => {
     axios
       .get(
-        `http://gateway.marvel.com/v1/public/comddics?ts=${time}&apikey=${publicKey}&hash=${hash}`,
+        `https://gateway.marvel.com/v1/public/comics?ts=${time}&apikey=${publicKey}&hash=${hash}`,
       )
       .then((response) => {
         setData(response.data.data.results);
