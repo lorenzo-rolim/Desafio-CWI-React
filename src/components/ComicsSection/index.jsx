@@ -1,7 +1,6 @@
-import React from "react";
-import P from "prop-types";
-import * as Styled from "./styles";
-// import { BsSearch } from "react-icons/bs";
+import React from 'react';
+import P from 'prop-types';
+import * as Styled from './styles';
 
 const ComicsSection = ({ children }) => {
   return (

@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import { device } from '../../constants/breakpoints';
 import { keyframes } from 'styled-components';
 
 const IntroModal = () => keyframes`
@@ -20,7 +21,7 @@ export const Container = styled.div`
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
     backdrop-filter: blur(7px);
     -webkit-backdrop-filter: blur(7px);
-    transition: all 0.5s ease-in-out;
+    transition: all 0.3s ease-in-out;
 
     display: flex;
     justify-content: center;
@@ -37,12 +38,17 @@ export const ModalContainer = styled.div`
     height: 80vh;
     width: 70vw;
 
-    display: grid;
+    display: flex;
     justify-content: center;
     align-items: center;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
 
     border-radius: 20px;
-    background: linear-gradient(to right, #a73737, #7a2828);
+    background-color: #333;
+
+    @media ${device.mobileL} {
+      flex-direction: column;
+      width: 90vw;
+    }
   `}
 `;

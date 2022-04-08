@@ -1,35 +1,14 @@
 export const theme = {
   colors: {
-    primaryColor: "#0A1128",
-    white: "#FFFFFF",
+    primaryColor: '#a73737',
+    white: '#FFFFFF',
+    gray: '#333',
+    gradient: 'linear-gradient(to right, #a73737, #7a2828);',
   },
   font: {
     family: {
       default: "'Six Caps', sans-serif;",
       secondFont: "'Poppins', sans-serif;",
     },
-    sizes: {
-      xsmall: "8rem",
-      small: "1.6rem",
-      medium: "2.4rem",
-      large: "3.2rem",
-      xlarge: "4.0rem",
-      xxlarge: "4.8rem",
-      huge: "5.6rem",
-      xhuge: "6.4rem",
-    },
-  },
-  media: {
-    lteMedium: "(max-width: 768px)",
-  },
-  spacings: {
-    xsmall: "8rem",
-    small: "1.6rem",
-    medium: "2.4rem",
-    large: "3.2rem",
-    xlarge: "4.0rem",
-    xxlarge: "4.8rem",
-    huge: "5.6rem",
-    xhuge: "6.4rem",
   },
 };

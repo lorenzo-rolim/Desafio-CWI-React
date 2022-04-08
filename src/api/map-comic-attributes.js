@@ -14,8 +14,11 @@ export const mapComicAttributes = (comicsData = [{}], loading) => {
     let year = OldDate.slice(0, 4);
     let month = OldDate.slice(5, 7);
     let day = OldDate.slice(8, 10);
-
     let date = `${day}/${month}/${year}`;
+
+    if (image.toLowerCase().includes('not_available')) {
+      return;
+    }
 
     return {
       id,

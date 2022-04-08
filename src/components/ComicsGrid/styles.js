@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import { device } from '../../constants/breakpoints';
 
 export const Container = styled.div`
   ${({ theme }) => css`
@@ -11,8 +12,12 @@ export const Container = styled.div`
     justify-content: center;
     align-items: center;
 
-    background: linear-gradient(to right, #a73737, #7a2828);
+    background: ${theme.colors.gradient};
     border: 1px solid white;
+
+    @media ${device.mobileS} {
+      width: 95%;
+    }
   `}
 `;
 
@@ -33,6 +38,9 @@ export const GridContainer = styled.div`
 
     padding-top: 5rem;
     padding-bottom: 5rem;
+    @media ${device.mobileS} {
+      width: 95%;
+    }
   `}
 `;
 
@@ -84,10 +92,7 @@ export const GridCellTitle = styled.h2`
     font-style: italic;
     font-weight: 700;
 
-    background: linear-gradient(to right, #ed213a, #93291e);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: black;
 
     text-align: center;
   `}

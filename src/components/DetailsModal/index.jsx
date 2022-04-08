@@ -4,7 +4,7 @@ import * as Styled from './styles';
 import DetailsModalBanner from '../DetailsModalBanner';
 import DetailsModalContent from '../DetailsModalContent';
 
-const DetailsModal = ({ children, data, setData }) => {
+const DetailsModal = ({ children, data = {}, setData }) => {
   return (
     //
     <Styled.Container ScaleFlag={data.title}>
@@ -18,6 +18,8 @@ const DetailsModal = ({ children, data, setData }) => {
 
 DetailsModal.propTypes = {
   children: P.node,
+  data: P.object,
+  setData: P.func,
 };
 
 export default DetailsModal;

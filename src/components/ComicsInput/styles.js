@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import { device } from '../../constants/breakpoints';
 
 export const ContainerSearchInput = styled.div`
   ${({ theme }) => css`
@@ -23,11 +24,15 @@ export const ContainerBorder = styled.div`
     border-bottom: 2px solid #adadad;
 
     width: 45vw;
+    @media ${device.mobileL} {
+      font-size: 1rem;
+      width: 75vw;
+    }
   `}
 `;
 
 export const SearchInput = styled.input`
-  ${({ theme }) => css`
+  ${({ theme, color = 'white' }) => css`
     font-size: 30px;
     color: #fff;
     line-height: 1.2;
@@ -44,11 +49,9 @@ export const SearchInput = styled.input`
     width: 100%;
     height: 60px;
 
-    background: linear-gradient(to right, #ed213a, #93291e);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: ${color};
 
+    background-color: transparent;
     padding: 0 5px;
 
     &:focus {
@@ -63,7 +66,13 @@ export const SearchButton = styled.button`
 `;
 
 export const TitleInput = styled.span`
-  ${({ theme, color = '' }) => css`
+  ${({
+    theme,
+    color = '',
+    after = '',
+    afterEffect = '',
+    beforeBG = 'white',
+  }) => css`
     position: absolute;
     display: block;
     width: 100%;
@@ -73,7 +82,6 @@ export const TitleInput = styled.span`
     left: 0;
 
     pointer-events: none;
-    color: #adadad;
 
     &::before {
       content: '';
@@ -87,10 +95,7 @@ export const TitleInput = styled.span`
       transition: all 0.4s;
       -o-transition: all 0.4s;
       -moz-transition: all 0.4s;
-      background: -webkit-linear-gradient(to right, #ed213a, #93291e);
-      background: -o-linear-gradient(to right, #ed213a, #93291e);
-      background: -moz-linear-gradient(to right, #ed213a, #93291e);
-      background: linear-gradient(to right, #ed213a, #93291e);
+      background-color: ${beforeBG};
     }
 
     &::after {
@@ -108,7 +113,7 @@ export const TitleInput = styled.span`
 
       width: 100%;
       position: absolute;
-      top: 30px;
+      top: ${afterEffect ? '-30px' : '30px'};
       left: 0px;
 
       padding-left: 5px;
@@ -117,20 +122,15 @@ export const TitleInput = styled.span`
       -webkit-transition: all 0.4s;
       -o-transition: all 0.4s;
       -moz-transition: all 0.4s;
+
+      @media ${device.tablet} {
+        font-size: 1.5rem;
+      }
     }
 
     ${SearchInput}:focus + &::after {
       top: -30px;
-
-      background: -webkit-linear-gradient(to right, #ed213a, #93291e);
-      background: -o-linear-gradient(to right, #ed213a, #93291e);
-      background: -moz-linear-gradient(to right, #ed213a, #93291e);
-      background: linear-gradient(to right, #ed213a, #93291e);
-
-      background-clip: text;
-      -webkit-background-clip: text;
-
-      -webkit-text-fill-color: transparent;
+      color: white;
     }
 
     ${SearchInput}:focus + &::before {

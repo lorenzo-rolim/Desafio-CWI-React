@@ -1,5 +1,6 @@
-import styled, { css } from "styled-components";
-import bannerBang from "../../assets/banners/fundo-full-banner.jpg";
+import styled, { css } from 'styled-components';
+import bannerBang from '../../assets/banners/fundo-full-banner.jpg';
+import { device } from '../../constants/breakpoints';
 
 export const Container = styled.div`
   ${({ theme }) => css`
@@ -25,9 +26,18 @@ export const ContainerImg = styled.div`
     width: 80%;
     display: flex;
     justify-content: center;
+    align-items: center;
     box-sizing: border-box;
     position: relative;
     z-index: 4;
+
+    @media ${device.laptopL} {
+      width: 100%;
+    }
+
+    @media ${device.tablet} {
+      width: 100%;
+    }
   `}
 `;
 
@@ -37,11 +47,12 @@ export const FullBanner = styled.img`
     width: 100%;
     height: 100%;
     object-fit: cover;
+    position: absolute;
   `}
 `;
 
 export const BangBackground = styled.img`
-  ${({ theme, right = "", left = "" }) => css`
+  ${({ theme, right = '', left = '' }) => css`
     position: absolute;
     right: ${right};
     top: 0;
@@ -54,7 +65,39 @@ export const BangBackground = styled.img`
 `;
 
 export const Title = styled.h1`
-  ${({ theme }) => css``}
+  ${({ theme }) => css`
+    position: absolute;
+    z-index: 4;
+
+    border-radius: 10px;
+    color: black;
+    font-family: ${theme.font.family.default}
+    font-size: 6.5rem;
+
+    padding: 1rem;
+
+    box-shadow: 4px 4px 1px 0px rgba(0, 0, 0, 0.9);
+    background-color: ${theme.colors.white};
+    width: 35vw;
+
+    text-align: center;
+    user-select: none;
+
+    text-transform: uppercase;
+    font-weight: 400;
+
+    @media ${device.laptopL}{
+        font-size: 5.5rem;
+    }
+    @media ${device.laptopL}{
+        font-size: 4.5rem;
+    }
+    @media ${device.mobileL}{
+        width: 55vw;
+        font-size: 4rem;
+    }
+
+  `}
 `;
 
 export const BlurContainer = styled.div`

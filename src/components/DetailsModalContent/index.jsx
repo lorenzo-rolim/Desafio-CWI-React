@@ -1,42 +1,43 @@
 import React from 'react';
 import P from 'prop-types';
 import * as Styled from './styles';
-import { useState } from 'react';
-
-import { initialState } from '../../pages/Home';
+import { initialState } from '../../constants/breakpoints';
 
 const DetailsModalContent = ({ children, data = [], setData }) => {
-  console.log(data.creators);
   return (
     //
     <Styled.Container>
-      <Styled.Title>{data.title}</Styled.Title>
+      <Styled.Title>{!data.title ? 'Sem Titulo' : data.title}</Styled.Title>
       <Styled.ContainerDetails>
         <Styled.DetailsTitle>Published:</Styled.DetailsTitle>
-        <Styled.DetailsText>{data.date}</Styled.DetailsText>
+        <Styled.DetailsText overflow="hidden">
+          {!data.date ? 'Sem data' : data.date}
+        </Styled.DetailsText>
         <Styled.DetailsTitle>Creators:</Styled.DetailsTitle>
         <Styled.DetailsTextContainer>
-          {data.creators?.map((creator) => {
-            return (
-              <Styled.DetailsText fontSize="15px">
-                {creator.name}
-              </Styled.DetailsText>
-            );
-          })}
-          {/* <Styled.DetailsText>TesteTesteaaa</Styled.DetailsText>
-          <Styled.DetailsText>TesteTesteaaa</Styled.DetailsText>
-          <Styled.DetailsText>TesteTesteaaa</Styled.DetailsText>
-          <Styled.DetailsText>TesteTesteaaa</Styled.DetailsText> */}
+          {!data.creators
+            ? 'Sem Criadores'
+            : data.creators?.map((creator, index) => {
+                return (
+                  <Styled.DetailsText
+                    key={`${index}+${creator.name}`}
+                    fontSize="15px"
+                  >
+                    {creator.name}
+                  </Styled.DetailsText>
+                );
+              })}
         </Styled.DetailsTextContainer>
         <Styled.DetailsTitle>Description:</Styled.DetailsTitle>
-        <Styled.DetailsText fontSize="15px">
-          {data.description}
-        </Styled.DetailsText>
+        <Styled.DescriptionContainer>
+          <Styled.DetailsText fontSize="15px">
+            {!data.description ? 'Sem Descrição' : data.description}
+          </Styled.DetailsText>
+        </Styled.DescriptionContainer>
         <Styled.DetailsButtonsContainer>
           <Styled.DetailsModalButton onClick={() => setData(initialState)}>
             Fechar
           </Styled.DetailsModalButton>
-          <Styled.DetailsModalButton>Completo</Styled.DetailsModalButton>
         </Styled.DetailsButtonsContainer>
       </Styled.ContainerDetails>
     </Styled.Container>
@@ -45,6 +46,8 @@ const DetailsModalContent = ({ children, data = [], setData }) => {
 
 DetailsModalContent.propTypes = {
   children: P.node,
+  data: P.object,
+  setData: P.func,
 };
 
 export default DetailsModalContent;

@@ -15,6 +15,7 @@ const ComicsHeader = ({ children, title }) => {
 
 ComicsHeader.propTypes = {
   children: P.node,
+  title: P.string,
 };
 
 export default ComicsHeader;

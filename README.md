@@ -1,70 +1,13 @@
-# Getting Started with Create React App
+# MARVEL COMICS
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Para construção do projeto usei, React, Styled-Components, EmailJS para disparar o email com o conteúdo, React Router Dom para a navegação e por fim o Axios para as requisições.
 
-## Available Scripts
-
-In the project directory, you can run:
+## Scripts
 
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Você pode usar o para start o projeto local na sua máquina no LocalHostPadrão - [http://localhost:3000](http://localhost:3000)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Resolução
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Iniciei o projeto com foco em deixar os componentes bem separados, cada um cumprindo sua função, custom hooks, constants, essa aplicação se trata de pagina Home - Principal aqui são carregados a maioria dos componentes onde são estruturados, inicialmente com cabeçalho e icone centralizados, full banner com desenho em quadrinhos, logo abaixo com um input de filtragem, onde é possível filtrar pelos quadrinhos desejados, em seguida o componente de grid onde são mapeados e carregados no DOM da aplicação os dados fornecidos pela API da Marvel, são distribuidos, tratados e inseridos, conta também com a tela de loading, onde só é exibe a grid somente após a requisição ter sido concluída, tela de erro tratando uma possível falha durante a requição, não permite que a aplicação quebre, e uma tela quadros inexistentes, fazendo com que caso a api retorne sem dados também não quebre o site, além disso durante a parte de renderização da GRID, evita rederização de dados específicos, caso algum deles retorne nulo ou indefinido, ademais, com hover ou click sobre os cards é possível exibir um MODAL com as informações do quadrinho selecionado, informações de título, descrição, criadores etc, modal exibe imagem referente ao quadrinho selecionado, mais abaixo um Form de e-mail, funcionalidade de disparar um e-mail template usando E-mailJS, trata alguns possíveis erros como Input em branco, ou erro durante a requisição do E-mail, etc..., adicionado página Not Found nas rotas, captura qualquer acesso em alguma URL inválida e exibe uma página de erro junto com link para a home do projeto.

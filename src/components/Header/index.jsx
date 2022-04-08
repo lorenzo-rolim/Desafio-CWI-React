@@ -1,11 +1,11 @@
-import React from "react";
-import P from "prop-types";
-import * as Styled from "./styles";
+import React from 'react';
+import P from 'prop-types';
+import * as Styled from './styles';
 
 const Header = ({ children, title }) => {
   return (
     //
-    <Styled.Container>
+    <Styled.Container role="header">
       <Styled.LogoContainer>
         <Styled.Logo>{title}</Styled.Logo>
       </Styled.LogoContainer>
@@ -14,6 +14,7 @@ const Header = ({ children, title }) => {
 };
 
 Header.propTypes = {
+  children: P.node,
   title: P.string,
 };
 

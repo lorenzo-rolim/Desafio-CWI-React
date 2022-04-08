@@ -1,6 +1,6 @@
-import styled, { css } from "styled-components";
+import styled, { css } from 'styled-components';
 
-export const Container = styled.div`
+export const Container = styled.header`
   ${({ theme }) => css`
     position: fixed;
     top: 0;
@@ -39,7 +39,7 @@ export const Logo = styled.h1`
     font-size: 50px;
 
     cursor: pointer;
-    user-select: none; 
+    user-select: none;
 
     text-transform: uppercase;
     font-weight: 400;

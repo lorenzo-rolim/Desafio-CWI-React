@@ -1,12 +1,21 @@
 import styled, { css } from 'styled-components';
+import { device } from '../../constants/breakpoints';
 
 export const Container = styled.div`
   ${({ theme }) => css`
     background-color: #333;
+    border: 1px solid white;
     border-radius: 20px;
     height: 95%;
-    width: 95%;
+    width: 45%;
     margin: auto;
+
+    @media ${device.mobileL} {
+      width: 90%;
+      max-height: 45%;
+      margin-bottom: 5%;
+      overflow-y: auto;
+    }
   `}
 `;
 
@@ -25,6 +34,14 @@ export const Title = styled.h1`
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+
+    @media ${device.laptop} {
+      font-size: 1.8rem;
+    }
+
+    @media ${device.tablet} {
+      font-size: 1.5rem;
+    }
   `}
 `;
 
@@ -56,6 +73,13 @@ export const DetailsTitle = styled.h2`
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+
+    @media ${device.laptop} {
+      font-size: 1.8rem;
+    }
+    @media ${device.tablet} {
+      font-size: 1.5rem;
+    }
   `}
 `;
 
@@ -68,22 +92,48 @@ export const DetailsTextContainer = styled.div`
   `}
 `;
 
-export const DetailsText = styled.p`
-  ${({ theme, fontSize = '20px' }) => css`
+export const DetailsText = styled.span`
+  ${({ theme, fontSize = '20px', overflow = 'auto' }) => css`
     font-size: ${fontSize};
     font-family: ${theme.font.family.secondFont};
     text-transform: uppercase;
     font-weight: 600;
-
     text-align: center;
+    min-height: 25px;
 
     padding-right: 10px;
     padding-left: 10px;
 
-    background: linear-gradient(to right, #ed213a, #93291e);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    overflow-y: ${overflow};
+
+    color: white;
+    @media ${device.laptopL} {
+      font-size: 1.3rem;
+    }
+    @media ${device.tablet} {
+      font-size: 1.1rem;
+    }
+  `}
+`;
+
+export const DescriptionContainer = styled.div`
+  ${({ theme }) => css`
+    overflow-y: auto;
+    height: 80%;
+
+    display: flex;
+    justify-content: center;
+
+    @media ${device.laptopL} {
+      height: 55%;
+    }
+    @media ${device.laptop} {
+      height: 65%;
+    }
+    @media ${device.mobileL} {
+      overflow-y: visible;
+      height: 50vh;
+    }
   `}
 `;
 
