@@ -8,6 +8,7 @@ const ComicsEmail = ({
   inputValue = '',
   setInputValue,
   setError,
+  setSuccess,
 }) => {
   const FormInput = useRef();
   const { Email, error } = useSendEmail();
@@ -25,6 +26,10 @@ const ComicsEmail = ({
 
     await Email(e, FormInput, setInputValue);
     setError(error);
+
+    if (!error) {
+      setSuccess(true);
+    }
   };
 
   return (
@@ -42,6 +47,7 @@ const ComicsEmail = ({
                 name="email"
                 value={inputValue}
                 onChange={(e) => HandlerInputChange(e)}
+                data-testid="input-email"
               />
               <Styled.TitleInput
                 afterEffect={inputValue}
@@ -63,6 +69,7 @@ ComicsEmail.propTypes = {
   inputValue: P.string,
   setInputValue: P.func,
   setError: P.func,
+  setSuccess: P.func,
 };
 
 export default ComicsEmail;

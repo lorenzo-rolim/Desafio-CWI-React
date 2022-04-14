@@ -28,7 +28,7 @@ export const TitleContainer = styled.div`
     justify-content: center;
     align-items: center;
 
-    background-color: red;
+    background-color: #b80f0a;
 
     @media ${device.laptopL} {
       width: 72vw;

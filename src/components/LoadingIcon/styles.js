@@ -29,7 +29,6 @@ export const Container = styled.div`
     backdrop-filter: blur(2.5px);
     -webkit-backdrop-filter: blur(2.5px);
     border-radius: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.18);
     z-index: 15;
 
     &:after {

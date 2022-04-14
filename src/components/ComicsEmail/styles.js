@@ -1,5 +1,4 @@
 import styled, { css } from 'styled-components';
-import { keyframes } from 'styled-components';
 import { device } from '../../constants/breakpoints';
 
 export const Container = styled.div`
@@ -56,7 +55,8 @@ export const FormTitle = styled.h2`
 
     @media ${device.mobileS} {
       margin-top: 0.5rem;
-      margin-bottom: 0.5rem;
+      margin-bottom: 3rem;
+      font-size: 1.7rem;
     }
   `}
 `;
@@ -162,6 +162,10 @@ export const SearchInput = styled.input`
     &:focus {
       outline: none;
       box-shadow: 5px 10px 5px 0px rgba(255, 255, 255, 0.1);
+    }
+
+    @media ${device.mobileL} {
+      font-size: 1.8rem;
     }
 
     @media ${device.mobileS} {

@@ -1,13 +1,17 @@
 import React from 'react';
 import P from 'prop-types';
 import * as Styled from './styles';
-import { initialState } from '../../constants/breakpoints';
+import { useNavigate } from 'react-router-dom';
 
 const DetailsModalContent = ({ children, data = [], setData }) => {
+  const navigate = useNavigate();
+
   return (
     //
     <Styled.Container>
-      <Styled.Title>{!data.title ? 'Sem Titulo' : data.title}</Styled.Title>
+      <Styled.Title data-testid="modal-title">
+        {!data.title ? 'Sem Titulo' : data.title}
+      </Styled.Title>
       <Styled.ContainerDetails>
         <Styled.DetailsTitle>Published:</Styled.DetailsTitle>
         <Styled.DetailsText overflow="hidden">
@@ -35,8 +39,10 @@ const DetailsModalContent = ({ children, data = [], setData }) => {
           </Styled.DetailsText>
         </Styled.DescriptionContainer>
         <Styled.DetailsButtonsContainer>
-          <Styled.DetailsModalButton onClick={() => setData(initialState)}>
-            Fechar
+          <Styled.DetailsModalButton
+            onClick={() => navigate(`/fulldetails/${data.id}`)}
+          >
+            ver Completo
           </Styled.DetailsModalButton>
         </Styled.DetailsButtonsContainer>
       </Styled.ContainerDetails>

@@ -5,7 +5,7 @@ export const Container = styled.div`
   ${({ theme }) => css`
     background-color: #333;
     border: 1px solid white;
-    border-radius: 20px;
+    border-radius: 10px;
     height: 95%;
     width: 45%;
     margin: auto;
@@ -15,6 +15,15 @@ export const Container = styled.div`
       max-height: 45%;
       margin-bottom: 5%;
       overflow-y: auto;
+
+      &::-webkit-scrollbar {
+        width: 5px;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background: linear-gradient(to bottom, #e52d27, #b31217, #7a2828);
+        border-radius: 20px;
+      }
     }
   `}
 `;
@@ -24,10 +33,9 @@ export const Title = styled.h1`
     text-align: center;
     margin-top: 3vh;
 
-    font-size: 25px;
-    font-family: ${theme.font.family.secondFont};
+    font-size: 3.5rem;
+    font-family: ${theme.font.family.thirdFont};
     text-transform: uppercase;
-    font-style: italic;
     font-weight: 800;
 
     background: linear-gradient(to right, #ed213a, #93291e);
@@ -37,10 +45,11 @@ export const Title = styled.h1`
 
     @media ${device.laptop} {
       font-size: 1.8rem;
+      padding: 0 20px;
     }
 
     @media ${device.tablet} {
-      font-size: 1.5rem;
+      font-size: 2rem;
     }
   `}
 `;
@@ -89,6 +98,15 @@ export const DetailsTextContainer = styled.div`
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+
+    &::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: linear-gradient(to bottom, #e52d27, #b31217, #7a2828);
+      border-radius: 20px;
+    }
   `}
 `;
 
@@ -100,19 +118,23 @@ export const DetailsText = styled.span`
     font-weight: 600;
     text-align: center;
     min-height: 25px;
+    overflow-x: hidden;
 
     padding-right: 10px;
     padding-left: 10px;
 
     overflow-y: ${overflow};
 
+    &::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: linear-gradient(to bottom, #e52d27, #b31217, #7a2828);
+      border-radius: 20px;
+    }
+
     color: white;
-    @media ${device.laptopL} {
-      font-size: 1.3rem;
-    }
-    @media ${device.tablet} {
-      font-size: 1.1rem;
-    }
   `}
 `;
 
@@ -132,7 +154,7 @@ export const DescriptionContainer = styled.div`
     }
     @media ${device.mobileL} {
       overflow-y: visible;
-      height: 50vh;
+      height: 80vh;
     }
   `}
 `;
@@ -158,6 +180,8 @@ export const DetailsModalButton = styled.button`
     text-transform: uppercase;
     font-weight: 600;
 
+    margin: 5rem 0;
+
     cursor: pointer;
 
     color: white;
@@ -168,6 +192,11 @@ export const DetailsModalButton = styled.button`
 
     &:hover {
       box-shadow: 3px 3px 5px 0px rgba(147, 41, 30, 0.5);
+    }
+
+    @media ${device.mobileL} {
+      margin-top: 10rem;
+      padding: 1.5rem 2rem;
     }
   `}
 `;

@@ -1,6 +1,6 @@
 {
   "name": "cwi-desafio",
-  "homepage": "https://lorenzo-rolim.github.io/Desafio-CWI-React",
+  "homepage": "https://lorenzo-rolim.github.io",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -16,7 +16,8 @@
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.0",
     "styled-components": "^5.3.5",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "whatwg-fetch": "^3.6.2"
   },
   "scripts": {
     "predeploy": "npm run build",
@@ -45,9 +46,12 @@
     ]
   },
   "devDependencies": {
+    "@testing-library/react-hooks": "^8.0.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.0.0",
     "gh-pages": "^3.2.3",
-    "prettier": "^2.6.2"
+    "msw": "^0.39.2",
+    "prettier": "^2.6.2",
+    "react-test-renderer": "^18.0.0"
   }
 }

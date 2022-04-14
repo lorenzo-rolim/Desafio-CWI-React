@@ -5,7 +5,7 @@ import * as Styled from './styles';
 const LoadingIcon = ({ children }) => {
   return (
     //
-    <Styled.Container role="loading"></Styled.Container>
+    <Styled.Container data-testid="loading-icon" />
   );
 };
 

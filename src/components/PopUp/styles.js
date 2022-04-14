@@ -9,13 +9,13 @@ const IntroError = () => keyframes`
 `;
 
 export const Container = styled.div`
-  ${({ theme }) => css`
+  ${({ theme, error }) => css`
     position: fixed;
 
     border-radius: 20px;
     width: 20vw;
     height: 15vh;
-    background: ${theme.colors.gradient};
+    background: ${error ? `${theme.colors.gradient}` : '#92d18b'};
 
     animation: ${IntroError} 0.3s ease-in-out;
 

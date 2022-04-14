@@ -1,33 +1,45 @@
-export const mapComicAttributes = (comicsData = [{}], loading) => {
+export const mapComicAttributes = (comicsData = [{}]) => {
   return comicsData.map((comic) => {
     const {
-      id = null,
+      id = '',
       description = '',
       title = '',
-      thumbnail: { path: image, extension } = {},
+      thumbnail: { path: image = '', extension = '' } = {},
     } = comic;
 
-    const { date: OldDate = '' } = comic.dates[0];
+    let year = '';
+    let month = '';
+    let day = '';
+    let date = '';
 
-    const { items: creators = [] } = comic.creators;
+    if (comic.dates !== undefined) {
+      const { date: OldDate = '' } = comic.dates[0];
 
-    let year = OldDate.slice(0, 4);
-    let month = OldDate.slice(5, 7);
-    let day = OldDate.slice(8, 10);
-    let date = `${day}/${month}/${year}`;
+      year = OldDate.slice(0, 4);
+      month = OldDate.slice(5, 7);
+      day = OldDate.slice(8, 10);
+      date = `${day}/${month}/${year}`;
+    }
 
-    if (image.toLowerCase().includes('not_available')) {
+    let creators = [];
+
+    if (comic.creators !== undefined) {
+      const { items = [] } = comic.creators;
+      creators = items;
+    }
+
+    if (image !== undefined && image.toLowerCase().includes('not_available')) {
       return;
     }
 
     return {
       id,
+      description,
       title,
       image,
       extension,
-      date,
-      description,
-      creators,
+      date: date,
+      creators: creators,
     };
   });
 };

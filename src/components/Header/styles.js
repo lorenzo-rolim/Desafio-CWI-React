@@ -21,7 +21,7 @@ export const LogoContainer = styled.div`
   ${({ theme }) => css`
     height: 100%;
 
-    background-color: red;
+    background-color: ${theme.colors.red};
     padding-right: 1rem;
     padding-left: 1rem;
 
@@ -43,5 +43,9 @@ export const Logo = styled.h1`
 
     text-transform: uppercase;
     font-weight: 400;
+
+    @media (max-height: 660px){
+        font-size: 30px;
+    }
   `}
 `;

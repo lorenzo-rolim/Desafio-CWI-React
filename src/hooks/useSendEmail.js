@@ -6,6 +6,7 @@ export const useSendEmail = () => {
 
   async function Email(e, req, setInputValue) {
     e.preventDefault();
+
     await emailjs
       .sendForm(
         'gmailMessage',
@@ -14,7 +15,7 @@ export const useSendEmail = () => {
         'Kb8b-Y3kYj7avQ0Vc',
       )
       .then(
-        (result) => {
+        (response) => {
           setInputValue('');
         },
         (error) => {

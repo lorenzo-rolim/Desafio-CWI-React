@@ -33,7 +33,7 @@ export const ContainerBorder = styled.div`
 
 export const SearchInput = styled.input`
   ${({ theme, color = 'white' }) => css`
-    font-size: 30px;
+    font-size: 3rem;
     color: #fff;
     line-height: 1.2;
     border: none;
@@ -57,6 +57,13 @@ export const SearchInput = styled.input`
     &:focus {
       outline: none;
       box-shadow: 5px 10px 5px 0px rgba(255, 255, 255, 0.1);
+    }
+
+    @media ${device.mobileL} {
+      font-size: 2rem;
+    }
+    @media ${device.mobileS} {
+      font-size: 1.5rem;
     }
   `}
 `;

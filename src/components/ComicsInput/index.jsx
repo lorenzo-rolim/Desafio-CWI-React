@@ -23,6 +23,7 @@ const ComicsInput = ({
           value={inputValue}
           color={color}
           onChange={(e) => HandlerInputChange(e)}
+          data-testid="input-comics"
         />
         <Styled.TitleInput
           beforeBG={beforeBG}

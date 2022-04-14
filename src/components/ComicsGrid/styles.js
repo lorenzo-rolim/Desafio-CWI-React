@@ -12,6 +12,8 @@ export const Container = styled.div`
     justify-content: center;
     align-items: center;
 
+    margin-bottom: 3vh;
+
     background: ${theme.colors.gradient};
     border: 1px solid white;
 

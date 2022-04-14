@@ -12,7 +12,8 @@ import ComicsInput from '../../components/ComicsInput';
 import ComicsGrid from '../../components/ComicsGrid';
 import ComicsEmail from '../../components/ComicsEmail';
 import DatailsModal from '../../components/DetailsModal/index';
-import ErrorPopUp from '../../components/ErrorPopUp/index';
+import PopUp from '../../components/PopUp/index';
+import Footer from '../../components/Footer';
 
 import { initialState } from '../../constants/breakpoints';
 
@@ -20,6 +21,7 @@ const Home = ({ children }) => {
   const [inputValue, setInputValue] = useState('');
   const [emailValue, setEmailValue] = useState('');
   const [error, setError] = useState(false);
+  const [success, setSuccess] = useState(false);
   const [modalComic, setModalComic] = useState(initialState);
 
   return (
@@ -27,7 +29,22 @@ const Home = ({ children }) => {
     <Styled.Container>
       <DatailsModal data={modalComic} setData={setModalComic} />
 
-      {error && <ErrorPopUp setError={setError} />}
+      {error && (
+        <PopUp
+          setError={setError}
+          error={true}
+          title="Ocorreu um Erro"
+          description="Tente Novamente mais Tarde!"
+        />
+      )}
+
+      {success && (
+        <PopUp
+          setSuccess={setSuccess}
+          title="Sucesso!"
+          description="Seu E-Mail foi enviado."
+        />
+      )}
 
       <Header title="Marvel Comics" />
 
@@ -53,8 +70,11 @@ const Home = ({ children }) => {
           inputValue={emailValue}
           setInputValue={setEmailValue}
           setError={setError}
+          setSuccess={setSuccess}
         />
       </ComicsSection>
+
+      <Footer />
     </Styled.Container>
   );
 };

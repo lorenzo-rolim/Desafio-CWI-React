@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components';
 import { keyframes } from 'styled-components';
+import { device } from '../../constants/breakpoints';
 
 const SadFaceRotate = () => keyframes`
   0% {
@@ -26,6 +27,10 @@ export const Container = styled.div`
       width: 7rem;
       height: 7rem;
     }
+
+    @media ${device.mobileL} {
+      height: 40vh;
+    }
   `}
 `;
 
@@ -39,5 +44,9 @@ export const NoDataTitle = styled.h1`
 
     color: ${theme.colors.primaryColor};
     margin-top: 10vh;
+
+    @media ${device.mobileL} {
+      font-size: 2rem;
+    }
   `}
 `;
