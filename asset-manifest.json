@@ -1,11 +1,11 @@
 {
   "files": {
-    "main.js": "/Desafio-CWI-React/static/js/main.9eb98fd6.js",
-    "static/media/Herois-Banner.png": "/Desafio-CWI-React/static/media/Herois-Banner.0de0893ce899b834a9c3.png",
-    "index.html": "/Desafio-CWI-React/index.html",
-    "main.9eb98fd6.js.map": "/Desafio-CWI-React/static/js/main.9eb98fd6.js.map"
+    "main.js": "/static/js/main.f9e06de5.js",
+    "static/media/Herois-Banner.png": "/static/media/Herois-Banner.0de0893ce899b834a9c3.png",
+    "index.html": "/index.html",
+    "main.f9e06de5.js.map": "/static/js/main.f9e06de5.js.map"
   },
   "entrypoints": [
-    "static/js/main.9eb98fd6.js"
+    "static/js/main.f9e06de5.js"
   ]
 }
